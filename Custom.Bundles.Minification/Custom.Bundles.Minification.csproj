@@ -1,0 +1,148 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{EAF54924-9938-416F-A5C5-F45C4157B1BB}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Custom.Bundles.Minification</RootNamespace>
+    <AssemblyName>Custom.Bundles.Minification</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <WebGreaseLibPath>..\packages\WebGrease.1.5.2\lib</WebGreaseLibPath>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Optimization, Version=1.1.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Bootstrap.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bootstrap.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ContentStyle.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ContentStyle.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Jquery.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Jquery.resx</DependentUpon>
+    </Compile>
+    <Compile Include="JqueryVal.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JqueryVal.resx</DependentUpon>
+    </Compile>
+    <Compile Include="MinifieAlgoritms\MinifieAlgoritmsCss.cs" />
+    <Compile Include="Core\CustomBundleConfig.cs" />
+    <Compile Include="BundleTransform\BundleTransformCss.cs" />
+    <Compile Include="BundleTransform\BundleTransformJs.cs" />
+    <Compile Include="BundleTransform\BundleTransformBase.cs" />
+    <Compile Include="MinifieAlgoritms\MinifieAlgoritmsBase.cs" />
+    <Compile Include="MinifieAlgoritms\MinifieAlgoritmsJs.cs" />
+    <Compile Include="MinifieAlgoritms\IMinifieAlgoritms.cs" />
+    <Compile Include="Modernizr.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Modernizr.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Core\CustomResourceOperations.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jquery-1.10.2.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Bootstrap.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Custom.Bundles.Minification</CustomToolNamespace>
+      <LastGenOutput>Bootstrap.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ContentStyle.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Custom.Bundles.Minification</CustomToolNamespace>
+      <LastGenOutput>ContentStyle.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Jquery.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Custom.Bundles.Minification</CustomToolNamespace>
+      <LastGenOutput>Jquery.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="JqueryVal.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Custom.Bundles.Minification</CustomToolNamespace>
+      <LastGenOutput>JqueryVal.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modernizr.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <CustomToolNamespace>Custom.Bundles.Minification</CustomToolNamespace>
+      <LastGenOutput>Modernizr.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jquery.validate.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\jquery.validate.unobtrusive.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modernizr-2.6.2.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bootstrap.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\respond.min.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bootstrap.min.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Site.css" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
