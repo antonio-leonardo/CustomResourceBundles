@@ -11,7 +11,7 @@ using System.Web.Routing;
 using System.Web.Optimization;
 
 //Namespace example of bundle encapsulation
-using Custom.Bundles.Minification;
+using Custom.Bundles.Minification.Core;
 
 namespace WebApplicationTestCustomBundle
 {
