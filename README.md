@@ -1,4 +1,4 @@
-# C# Encapsuled Resource Bundles
+# C# encapsuled and decopled Bundles
 This project results a assembly that encapsulates CSSs and JavaScripts, useful at large farms with hundred of developers that needs ensure to maintain the defined UI Patterns.
 It's can be used like a decople Api that contains assembly isolation where process the JavaScript and CSS minification. The response from HTTP request is very simple!
 
